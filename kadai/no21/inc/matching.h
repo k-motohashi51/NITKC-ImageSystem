@@ -3,9 +3,6 @@
 
 #include "var.h"
 
-double R(imgdata*, imgdata*);
-double s(imgdata*, imgdata*);
-double d(imgdata*, imgdata*);
-double dev(imgdata*);
+void matching(imgdata*, imgdata*, imgdata*);
 
 #endif

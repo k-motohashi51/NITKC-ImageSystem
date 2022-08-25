@@ -1,10 +1,5 @@
-#include <stdio.h>
 #include <math.h>
-#include "./inc/matching.h"
-
-int match(imgdata* f, imgdata* t, imgdata* ra, imgdata* sa, imgdata* da) {
-    
-}
+#include "../inc/general.h"
 
 /* 相関係数 */
 double R(imgdata* F, imgdata* T) {
@@ -24,7 +19,7 @@ double dev(imgdata* idata) {
 
     for (int l = 0; l < idata->height; l++) {
         for (int k = 0; k < idata->width; k++) {
-            sum += pow(idata->source[l][k], 2.0);
+            sum += pow(idata->source[RED][l][k], 2);
         }
     }
 
@@ -37,7 +32,7 @@ double s(imgdata* f, imgdata* t) {
 
     for (int l = 0; l < t->height; l++) {
         for(int k = 0; k < t->width; k++) {
-            sum += f->source[l][k] * t->source[l][k];      
+            sum += f->source[RED][l][k] * t->source[RED][l][k];      
         }
     }
 
@@ -50,7 +45,7 @@ double d(imgdata* f, imgdata* t) {
 
     for (int l = 0; l < t->height; l++) {
         for (int k = 0; k < t->width; k++) {
-            sum += fabs(f->source[l][k] - t->source[l][k]);
+            sum += fabs(f->source[RED][l][k] - t->source[RED][l][k]);
         }
     }
 

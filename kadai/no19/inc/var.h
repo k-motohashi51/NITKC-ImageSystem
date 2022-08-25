@@ -1,7 +1,7 @@
 #ifndef VAR_H_
 #define VAR_H_
 
-#include "def550.h"
+#include "def.h"
 
 /* 画像処理に用いるデータ構造 */
 /* 2次元以上の配列は、x,y,z -> [z][y][x] に並べること */
