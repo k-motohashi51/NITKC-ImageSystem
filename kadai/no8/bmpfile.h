@@ -1,3 +1,9 @@
+#ifndef BMPFILE_H
+#define BMPFILE_H
+#include "def.h"
+#include "var.h"
+
+
 extern int readBMPfile(char *fname,imgdata *idata);
 /* BMP形式で画像をファイルから読み込む関数 */
 /* ( 8bpp, 24bpp, 32bpp に対応 )   */
@@ -19,3 +25,4 @@ extern void add_dotname(char *fname, char *dotname);
 /*         dotname 付加する拡張子 */
 /*   戻値：なし                   */
 /*   注意：fname に dotname で指定した拡張子がついている場合は何もしない */
+#endif

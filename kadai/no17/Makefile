@@ -1,27 +1,25 @@
-CC	=	gcc
+CC		=	gcc
 CFLAGS	=	-g -Wall -O2
 
 TARGET	=	main
 
-EXEDIR	=	.
-OBJDIR	=	../obj
-INCDIR	=	../inc
-PARTSDIR	=	../parts
+SRCDIR	=	./src
+INCDIR	=	./inc
+OBJDIR	=	./obj
+EXEDIR	=	./bin
 
+SRCS	=	$(wildcard $(SRCDIR)/*.c)
+INCS	=	$(wildcard $(INCDIR)/*.h)
+OBJS	=	$(wildcard $(OBJDIR)/*.o) $(addprefix $(OBJDIR)/,$(notdir $(SRCS:.c=.o)))
 EXES	=	$(TARGET)
-OBJS	=	$(wildcard $(OBJDIR)/*)
-INCS	=	$(wildcard $(INCDIR)/*)
 
 all:	$(TARGET)
 
-$(TARGET):	$(OBJS) $(OBJDIR)/main.o $(OBJDIR)/binarization.o $(OBJDIR)/histgram.o $(OBJDIR)/general.o
+$(TARGET):	$(OBJS)
 	$(CC) $(CFLAGS) $^ -o $(EXEDIR)/$@ -lm
 
-$(OBJDIR)/%.o:	%.c
-	$(CC) $(CFLAGS) -I$(INCDIR) -c $^ -o $@
-
-$(OBJDIR)%.o:	$(PARTSDIR)/%.c
-	$(CC) $(CFLAGS) -I$(INCDIR) -c $^ -o $@
+$(OBJDIR)/%.o:	$(SRCDIR)/%.c
+	$(CC) $(CFLAGS) -I$(INCDIR) -c $< -o $@
 
 .PHONY:	clean
 clean:

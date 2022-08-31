@@ -1,3 +1,6 @@
+#ifndef DEF_H_
+#define DEF_H_
+
 /* 画像データのタイプ */
 #define Uchar unsigned char
 
@@ -23,3 +26,5 @@
 #define WHITEVALUE 255
 #define BLACKVALUE 0
 #define MIDDLEVALUE 128
+
+#endif

@@ -6,7 +6,7 @@ no04 / o / o / -
 no05 / o / o / !
 no06 / o / o / -
 no07 / o / o / -
-no08 / x / x / !
+no08 / o / o / !
 no09 / o / o / !
 no10 / o / o / !
 no11 / x / x / -
@@ -15,9 +15,9 @@ no13 / x / x / -
 no14 / x / x / -
 no15 / o / o / -
 no16 / o / o / !
-no17 / x / x / !
+no17 / o / o / !
 no18 / x / x / -
-no19 / # / x / !
+no19 / o / o / !
 no20 / x / x / -
-no21 / x / x / !
-no22 / x / x / !
+no21 / o / o / !
+no22 / o / o / !
